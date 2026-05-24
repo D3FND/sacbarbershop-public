@@ -1,0 +1,302 @@
+:root {
+    --bg-main: #121212;
+    --bg-card: #1a1a1a;
+    --bg-nav: #0a0a0a;
+    --border-color: #2a2a2a;
+    --text-primary: #ffffff;
+    --text-secondary: #a0a0a0;
+    --accent: #ffffff;
+    --accent-hover: #e0e0e0;
+    --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-family: var(--font-stack);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Layout Containers */
+.nav-container, .hero, .services-section, .location-section, .booking-container, .footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Navbar Style */
+.navbar {
+    background-color: var(--bg-nav);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+.brand-logo {
+    color: var(--text-primary);
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+.nav-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    margin-left: 1.5rem;
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+}
+.nav-links a:hover {
+    color: var(--text-primary);
+}
+.nav-links .btn-nav {
+    border: 1px solid var(--text-primary);
+    padding: 0.5rem 1rem;
+    color: var(--text-primary);
+    transition: background 0.2s ease;
+}
+.nav-links .btn-nav:hover {
+    background-color: var(--text-primary);
+    color: var(--bg-main);
+}
+
+/* Hero Section */
+.hero {
+    padding: 10rem 2rem;
+    display: flex;
+    align-items: center;
+    min-height: calc(85vh - 70px);
+}
+.hero-content {
+    max-width: 700px;
+}
+.badge {
+    display: inline-block;
+    border: 1px solid var(--border-color);
+    padding: 0.3rem 0.8rem;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+h1 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -1px;
+    margin-bottom: 1.5rem;
+}
+.hero-content p {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    margin-bottom: 2.5rem;
+}
+.hero-actions a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 0.8rem 2rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+.btn-primary {
+    background-color: var(--accent);
+    color: var(--bg-main);
+    margin-right: 1rem;
+    transition: background 0.2s ease;
+}
+.btn-primary:hover {
+    background-color: var(--accent-hover);
+}
+.btn-secondary {
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    transition: border 0.2s ease;
+}
+.btn-secondary:hover {
+    border-color: var(--text-primary);
+}
+
+/* Services Grid */
+.services-section {
+    padding: 6rem 2rem;
+    border-top: 1px solid var(--border-color);
+}
+.section-header {
+    margin-bottom: 4rem;
+}
+.section-header h2 {
+    font-size: 2rem;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+}
+.section-header p {
+    color: var(--text-secondary);
+}
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+.service-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    padding: 2.5rem;
+    position: relative;
+}
+.service-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+.price {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+.desc {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+/* Location Section */
+.location-section {
+    padding: 6rem 2rem;
+    border-top: 1px solid var(--border-color);
+}
+.location-content {
+    max-width: 600px;
+}
+.location-content h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+.location-content p {
+    color: var(--text-secondary);
+    margin-bottom: 3rem;
+}
+.meta-info {
+    display: flex;
+    gap: 3rem;
+}
+.meta-item strong {
+    display: block;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-secondary);
+    margin-bottom: 0.3rem;
+}
+
+/* Booking Section & Custom Form */
+.booking-section {
+    padding: 6rem 2rem;
+    border-top: 1px solid var(--border-color);
+    background-color: var(--bg-nav);
+}
+.booking-container {
+    max-width: 650px;
+}
+.form-header {
+    margin-bottom: 3rem;
+    text-align: left;
+}
+.form-header h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+.form-header p {
+    color: var(--text-secondary);
+}
+.waitlist-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.form-row {
+    display: flex;
+    gap: 1.5rem;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+.form-group label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+}
+.form-group input, .form-group select {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    padding: 0.8rem 1rem;
+    font-family: var(--font-stack);
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+.form-group input:focus, .form-group select:focus {
+    border-color: var(--text-primary);
+}
+.btn-submit {
+    background-color: var(--accent);
+    color: var(--bg-main);
+    border: none;
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    margin-top: 1rem;
+}
+.btn-submit:hover {
+    background-color: var(--accent-hover);
+}
+
+/* Form Responses */
+.hidden-msg {
+    display: none;
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    font-size: 1rem;
+    color: var(--text-primary);
+}
+
+/* Footer styling */
+footer {
+    border-top: 1px solid var(--border-color);
+    padding: 3rem 2rem;
+    text-align: center;
+}
+footer p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+/* Responsive Overrides */
+@media (max-width: 768px) {
+    h1 { font-size: 2.5rem; }
+    .form-row { flex-direction: column; gap: 1.5rem; }
+    .nav-links { display: none; } /* Kept simple for raw conversion speed */
+    .meta-info { flex-direction: column; gap: 1.5rem; }
+}
