@@ -6,7 +6,7 @@
     --bg-card-strong: rgba(255, 255, 255, 0.08);
     --border-color: rgba(255, 255, 255, 0.12);
     --border-strong: rgba(255, 255, 255, 0.24);
-    --status-closed: #b86a72;
+    --status-closed: #ef4444;
     --text-primary: #f5f7fb;
     --text-secondary: #b1b6c4;
     --accent: #f5f7fb;
@@ -368,11 +368,16 @@ address {
 .map-link {
     display: inline-flex;
     align-items: center;
+    gap: 0.35rem;
     margin-top: 1rem;
     color: var(--text-primary);
     text-decoration: none;
     font-weight: 600;
     transition: color 0.2s ease;
+}
+
+.map-link::after {
+    content: "->";
 }
 
 .map-link:hover,
@@ -407,7 +412,7 @@ address {
 }
 
 .hours-list li.is-closed span:last-child {
-    color: #ef4444;
+    color: var(--status-closed);
 }
 
 .faq-card p {
