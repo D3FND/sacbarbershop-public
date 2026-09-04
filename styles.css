@@ -414,6 +414,11 @@ footer {
     display: none;
 }
 
+.mobile-booking-cta:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+
 @media (max-width: 768px) {
     body {
         padding-bottom: 5.5rem;
