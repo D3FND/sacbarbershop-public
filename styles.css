@@ -518,6 +518,7 @@ footer {
     .service-card,
     .hero-actions a,
     .booking-button,
+    .mobile-booking-cta,
     .nav-links a,
     .social-links a {
         transition: none;
