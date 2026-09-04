@@ -1,10 +1,12 @@
 :root {
     --bg-main: #090b10;
+    --bg-surface: #171719;
     --bg-nav: rgba(10, 12, 18, 0.84);
     --bg-card: rgba(255, 255, 255, 0.05);
     --bg-card-strong: rgba(255, 255, 255, 0.08);
     --border-color: rgba(255, 255, 255, 0.12);
     --border-strong: rgba(255, 255, 255, 0.24);
+    --status-closed: #b86a72;
     --text-primary: #f5f7fb;
     --text-secondary: #b1b6c4;
     --accent: #f5f7fb;
@@ -44,7 +46,6 @@ a {
 
 .nav-container,
 .hero,
-.services-section,
 .location-section,
 .faq-section,
 .booking-container,
@@ -129,8 +130,7 @@ a {
 
 .hero-content {
     max-width: 760px;
-    padding: 2rem;
-    border-radius: 28px;
+    padding: 0;
 }
 
 .badge,
@@ -220,6 +220,20 @@ h1 {
 .faq-section,
 .booking-section {
     padding: 0 2rem 6rem;
+}
+
+.services-section {
+    background: var(--bg-surface);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    padding: 5.5rem 0;
+    margin-bottom: 6rem;
+}
+
+.services-inner {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 2rem;
 }
 
 .section-header {
@@ -321,12 +335,12 @@ footer p {
 
 .location-content {
     padding: 2rem;
-    max-width: 920px;
+    max-width: 1120px;
 }
 
 .meta-info {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 1fr 1.25fr;
     gap: 2rem;
 }
 
@@ -342,24 +356,54 @@ footer p {
 address {
     font-style: normal;
     line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+.map-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.24);
+    padding-bottom: 0.2rem;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.map-link:hover,
+.map-link:focus-visible {
+    color: var(--accent-hover);
+    border-color: var(--text-primary);
 }
 
 .hours-list {
     list-style: none;
-    max-width: 360px;
+    width: 100%;
 }
 
 .hours-list li {
     display: flex;
     justify-content: space-between;
+    align-items: baseline;
     gap: 1rem;
-    padding: 0.45rem 0;
+    padding: 0.75rem 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .hours-list li span:first-child {
     font-weight: 600;
     color: var(--text-primary);
+}
+
+.hours-list li span:last-child {
+    margin-left: auto;
+    text-align: right;
+    white-space: nowrap;
+}
+
+.hours-list li.is-closed span:last-child {
+    color: var(--status-closed);
 }
 
 .faq-card p {
@@ -384,13 +428,21 @@ address {
 }
 
 .booking-copy {
-    margin-bottom: 1.5rem;
     text-align: center;
+}
+
+.booking-action {
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .booking-button {
     min-width: 220px;
-    margin: 0 auto;
+    margin: 1.5rem auto 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 footer {
@@ -437,7 +489,7 @@ footer {
 
     .nav-container,
     .hero,
-    .services-section,
+    .services-inner,
     .location-section,
     .faq-section,
     .booking-container,
@@ -449,6 +501,11 @@ footer {
     .hero {
         padding-top: 6rem;
         min-height: auto;
+    }
+
+    .services-section {
+        padding: 4.5rem 0;
+        margin-bottom: 5rem;
     }
 
     .hero-content,
@@ -477,6 +534,18 @@ footer {
     .meta-info {
         grid-template-columns: 1fr;
         gap: 1.5rem;
+    }
+
+    .hours-list li {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 0.2rem;
+    }
+
+    .hours-list li span:last-child {
+        margin-left: 0;
+        text-align: left;
+        white-space: normal;
     }
 
     .hours-list li {
