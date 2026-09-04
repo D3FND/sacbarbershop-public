@@ -377,7 +377,7 @@ address {
 }
 
 .map-link::after {
-    content: "->";
+    content: "→";
 }
 
 .map-link:hover,
