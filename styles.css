@@ -6,7 +6,7 @@
     --bg-card-strong: rgba(255, 255, 255, 0.08);
     --border-color: rgba(255, 255, 255, 0.12);
     --border-strong: rgba(255, 255, 255, 0.24);
-    --status-closed: #b86a72;
+    --status-closed: #ef4444;
     --text-primary: #f5f7fb;
     --text-secondary: #b1b6c4;
     --accent: #f5f7fb;
@@ -340,8 +340,9 @@ footer p {
 
 .meta-info {
     display: grid;
-    grid-template-columns: 1fr 1.25fr;
-    gap: 2rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
 }
 
 .meta-item strong {
@@ -356,25 +357,32 @@ footer p {
 address {
     font-style: normal;
     line-height: 1.8;
-    margin-bottom: 1rem;
+    margin-bottom: 0;
+}
+
+.schedule-item {
+    max-width: 350px;
+    width: 100%;
 }
 
 .map-link {
     display: inline-flex;
     align-items: center;
     gap: 0.35rem;
+    margin-top: 1rem;
     color: var(--text-primary);
     text-decoration: none;
     font-weight: 600;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.24);
-    padding-bottom: 0.2rem;
-    transition: color 0.2s ease, border-color 0.2s ease;
+    transition: color 0.2s ease;
+}
+
+.map-link::after {
+    content: "→";
 }
 
 .map-link:hover,
 .map-link:focus-visible {
     color: var(--accent-hover);
-    border-color: var(--text-primary);
 }
 
 .hours-list {
@@ -387,8 +395,8 @@ address {
     justify-content: space-between;
     align-items: baseline;
     gap: 1rem;
-    padding: 0.75rem 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 0.45rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .hours-list li span:first-child {
@@ -400,6 +408,7 @@ address {
     margin-left: auto;
     text-align: right;
     white-space: nowrap;
+    color: var(--text-secondary);
 }
 
 .hours-list li.is-closed span:last-child {
